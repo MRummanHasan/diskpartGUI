@@ -1,0 +1,11 @@
+C:\Users\Lappi\source\repos\DiskpartGUI\bin\Debug\DiskpartGUI.exe.config
+C:\Users\Lappi\source\repos\DiskpartGUI\bin\Debug\DiskpartGUI.exe
+C:\Users\Lappi\source\repos\DiskpartGUI\bin\Debug\DiskpartGUI.pdb
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.ChangeVolumeLetter.resources
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.Form1.resources
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.Properties.Resources.resources
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.csproj.GenerateResource.cache
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.csproj.CoreCompileInputs.cache
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.exe
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.pdb
+C:\Users\Lappi\source\repos\DiskpartGUI\obj\Debug\DiskpartGUI.csprojAssemblyReference.cache

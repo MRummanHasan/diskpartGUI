@@ -1,0 +1,9 @@
+
+Microsoft DiskPart version 10.0.17134.1
+
+Copyright (C) Microsoft Corporation.
+On computer: DESKTOP-74BTOGJ
+
+Disk 0 is now the selected disk.
+
+Disk ID: 21C7879B

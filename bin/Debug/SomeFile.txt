@@ -1,0 +1,15 @@
+ Volume in drive C is Windows 10
+ Volume Serial Number is 9E67-920A
+
+ Directory of C:\Users\Lappi\source\repos\DiskpartGUI\bin\Debug
+
+04/20/2019  02:51 PM    <DIR>          .
+04/20/2019  02:51 PM    <DIR>          ..
+04/15/2019  11:53 PM                 9 abc.txt
+04/20/2019  09:46 PM            11,264 DiskpartGUI.exe
+04/15/2019  10:31 PM               189 DiskpartGUI.exe.config
+04/20/2019  09:46 PM            34,304 DiskpartGUI.pdb
+04/20/2019  09:46 PM                 0 SomeFile.txt
+04/20/2019  03:27 PM                36 volumeWork.txt
+               6 File(s)         45,802 bytes
+               2 Dir(s)  19,246,907,392 bytes free
