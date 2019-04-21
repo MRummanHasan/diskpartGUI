@@ -47,22 +47,19 @@ namespace DiskpartGUI
 
         private void Rescan_Click(object sender, EventArgs e)
         {
-            //string textFile = @"SomeFile.txt";
-            //if (File.Exists(textFile))
-            //{
-            //    string[] lines = File.ReadAllLines(textFile);
-            //    foreach (string line in lines)
-            //        richTextBox1.Text += line;
-            //}
+            string strCmdText = "/a /c \"diskpart /s rescan.bat >> rescanOutput.txt\"";
+            Process.Start("cmd.exe ", strCmdText);
+            
+            System.Threading.Thread.Sleep(5000);
+
 
             string line;
-            StreamReader file = new StreamReader(@"SomeFile.txt");
+            StreamReader file = new StreamReader(@"rescanOutput.txt");
             while ((line = file.ReadLine()) != null)
             {
-                if (line.Contains("Disk"))
-                {
-                    richTextBox1.Text += "\n" + line;
-                }
+                if(line.Contains("finished"))
+                MessageBox.Show(line);
+
             }
             file.Close();
         }
@@ -70,23 +67,7 @@ namespace DiskpartGUI
         // Disk ID
         private void Button2_Click(object sender, EventArgs e)
         {
-            string strCmdText = "/a /c \"diskpart /s listDisk.txt >> listdiskOutput.txt\"";
-            Process.Start("cmd.exe ", strCmdText);
-
-            string line;
-            StreamReader file = new StreamReader(@"listdiskOutput.txt");
-            while ((line = file.ReadLine()) != null)
-            {
-                if (line.Contains("Disk "))
-                {
-                    label1.Text += "\n" + line;
-                    if (!line.Contains("Disk #"))
-                    {
-                        comboBox1.Items.Add(line);
-                    }
-                }
-            }
-            file.Close();
+           //shwo panel of disk detail
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -94,10 +75,9 @@ namespace DiskpartGUI
 
         }
 
-        // tell uniqueID - GO
+        // tell uniqueID - GO_click
         private void Button3_Click(object sender, EventArgs e)
         {
-            //try catch laganan hy lazmi
             try
             {
                 //textBox1.Text = comboBox1.Text[7].ToString();
@@ -125,7 +105,57 @@ namespace DiskpartGUI
                     diskid.Text = line;
                 }
             }
+            
             file.Close();
+         
+        }
+
+        private void Directory_Click(object sender, EventArgs e)
+        {
+            //string textFile = @"SomeFile.txt";
+            //if (File.Exists(textFile))
+            //{
+            //    string[] lines = File.ReadAllLines(textFile);
+            //    foreach (string line in lines)
+            //        richTextBox1.Text += line;
+            //}
+
+            string line;
+            StreamReader file = new StreamReader(@"SomeFile.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.Contains("Disk"))
+                {
+                    richTextBox1.Text += "\n" + line;
+                }
+            }
+            file.Close();
+        }
+
+        private void ShowDetails_Click(object sender, EventArgs e)
+        {
+            string strCmdText = "/a /c \"diskpart /s listDisk.bat >> listdiskOutput.txt\"";
+            Process.Start("cmd.exe ", strCmdText);
+
+            string line;
+            StreamReader file = new StreamReader(@"listdiskOutput.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.Contains("Disk "))
+                {
+                    label1.Text = "\n" + line;
+                    if (!line.Contains("Disk #"))
+                    {
+                        comboBox1.Items.Add(line);
+                    }
+                }
+            }
+            file.Close();
+            File.Delete("listdiskOutput.txt");
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
 
         }
     }
