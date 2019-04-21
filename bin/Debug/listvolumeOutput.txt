@@ -1,0 +1,13 @@
+
+Microsoft DiskPart version 10.0.17134.1
+
+Copyright (C) Microsoft Corporation.
+On computer: DESKTOP-74BTOGJ
+
+  Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+  Volume 0     B                       DVD-ROM         0 B  No Media           
+  Volume 1         System Rese  NTFS   Partition    548 MB  Healthy    System  
+  Volume 2     C   Windows 10   NTFS   Partition     73 GB  Healthy    Boot    
+  Volume 3     D   Data Drive   NTFS   Partition    244 GB  Healthy            
+  Volume 4     E   Backup Driv  NTFS   Partition    254 GB  Healthy            

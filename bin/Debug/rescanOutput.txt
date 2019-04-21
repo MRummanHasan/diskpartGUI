@@ -7,3 +7,21 @@ On computer: DESKTOP-74BTOGJ
 Please wait while DiskPart scans your configuration...
 
 DiskPart has finished scanning your configuration.
+
+Microsoft DiskPart version 10.0.17134.1
+
+Copyright (C) Microsoft Corporation.
+On computer: DESKTOP-74BTOGJ
+
+Please wait while DiskPart scans your configuration...
+
+DiskPart has finished scanning your configuration.
+
+Microsoft DiskPart version 10.0.17134.1
+
+Copyright (C) Microsoft Corporation.
+On computer: DESKTOP-74BTOGJ
+
+Please wait while DiskPart scans your configuration...
+
+DiskPart has finished scanning your configuration.

@@ -1,2 +1,2 @@
 Select Volume 0
-assign letter = m
+assign letter = b

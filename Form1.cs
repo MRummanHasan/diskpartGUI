@@ -21,9 +21,7 @@ namespace DiskpartGUI
             //string strCmdText = "/K dir > SomeFile.txt";
             //Process.Start("CMD.exe", strCmdText);
 
-            //StreamReader sw = new StreamReader("SomeFile.txt");
-            //string l = sw.ReadAllText(textFile);
-            //textBox1.Text=l;
+    
 
 
 
@@ -52,7 +50,6 @@ namespace DiskpartGUI
             
             System.Threading.Thread.Sleep(5000);
 
-
             string line;
             StreamReader file = new StreamReader(@"rescanOutput.txt");
             while ((line = file.ReadLine()) != null)
@@ -80,8 +77,8 @@ namespace DiskpartGUI
         {
             try
             {
-                //textBox1.Text = comboBox1.Text[7].ToString();
-                StreamWriter sw = new StreamWriter("listDiskUniqueID.txt");
+                ////textBox1.Text = comboBox1.Text[7].ToString();
+                StreamWriter sw = new StreamWriter("listvolumeOutput.bat");
                 sw.WriteLine("Select disk " + comboBox1.Text[7]);
                 sw.WriteLine("uniqueid disk");
                 sw.Close();
@@ -93,7 +90,7 @@ namespace DiskpartGUI
             }
             
 
-            string strCmdText = "/a /c \"diskpart /s listDiskUniqueID.txt >> listDiskUniqueIDoutput.txt\"";
+            string strCmdText = "/a /c \"diskpart /s listvolumeOutput.bat >> listDiskUniqueIDoutput.txt\"";
             Process.Start("cmd.exe ", strCmdText);
 
             string line;
@@ -157,6 +154,75 @@ namespace DiskpartGUI
         private void Button4_Click(object sender, EventArgs e)
         {
 
+            string strCmdText = "/a /c \"diskpart /s san.bat >> sanOutput.txt\"";
+            Process.Start("cmd.exe ", strCmdText);
+
+            string line;
+            StreamReader file = new StreamReader(@"sanOutput.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                    sanpolicydetails.Text = "\n" + line;
+            }
+            file.Close();
+        }
+
+        private void VolumeDetails_Click(object sender, EventArgs e)
+        {
+            richTextBoxVolume.Clear();
+
+            string strCmdText = "/a /c \"diskpart /s listvolume.bat >> listvolumeOutput.txt\"";
+            Process.Start("cmd.exe ", strCmdText);
+
+            string line;
+            StreamReader file = new StreamReader(@"listvolumeOutput.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                richTextBoxVolume.Text += "\n" + line;
+            }
+            file.Close();
+            File.Delete("listvolumeOutput.txt");
+            //System.Threading.Thread.Sleep(4000);
+            
+            //richTextBoxVolume.Selection.Text = "";
+            //volumeDetails.Enabled = false;
+        }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RichTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Helpbtn_Click(object sender, EventArgs e)
+        {
+            richTextBoxVolume.Clear();
+
+            string strCmdText = "/a /c \"diskpart /s help.bat >> helpoutput.txt\"";
+            Process.Start("cmd.exe ", strCmdText);
+
+            string line;
+            StreamReader file = new StreamReader(@"helpoutput.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                richTextBoxHelp.Text += "\n" + line;
+            }
+            file.Close();
+            
+            File.Delete("helpoutput.txt");
         }
     }
 }
